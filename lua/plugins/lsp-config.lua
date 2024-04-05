@@ -29,10 +29,16 @@ return {
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
+            lspconfig.clangd.setup({
+                capabilities = capabilities,
+            })
+            lspconfig.pyright.setup({
+                capabilities = capabilities,
+            })
 
-			vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
+			vim.keymap.set("n", "<leader>mf", vim.lsp.buf.hover, {})
+			vim.keymap.set("n", "<leader>md", vim.lsp.buf.definition, {})
+			vim.keymap.set("n", "<leader>mr", vim.lsp.buf.references, {})
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 		end,
 	},
